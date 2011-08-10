@@ -87,6 +87,11 @@ h2 {
   text-align: center;
 }
 
+#important
+{
+   font-weight: bolder;
+}
+
 div.figure {
  # border: thin silver solid;
   margin: 0.5em;
