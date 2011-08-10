@@ -73,22 +73,18 @@ h1 {
 	font-weight: bold;
 	color: #000000;
 	text-align: left;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: double;
-	border-top-color: #FFFFFF;
-	border-right-color: #FFFFFF;
-	border-bottom-color: #FFFFFF;
-	border-left-color: #FFFFFF;
-	width: 400px;
 }
 
 h2 {
 	font-size: 16px;
 	color: #000000;
 	text-align: left;
+}
+
+.content
+{
+  margin:70px;
+  text-align: center;
 }
 
 div.figure {
