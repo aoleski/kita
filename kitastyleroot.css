@@ -119,4 +119,10 @@ vertical-align:top;
 white-space:nowrap;
 }
 
+table.jahresplan {
+text-align:left;
+vertical-align:top;
+font-size: 12px;
+}
+
 
