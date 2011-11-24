@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+html {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-image: url(images/maincolor-orange.jpg);
+  position: relative; /* Fix for absolute positioning */
+}
+
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 14px;
