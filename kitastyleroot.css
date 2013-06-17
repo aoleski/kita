@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+@import "css/form.css";
 html {
   max-width: 1000px;
   margin: 0 auto;
@@ -102,7 +102,7 @@ h2 {
 }
 
 div.figure {
- # border: thin silver solid;
+  border: thin silver solid;
   margin: 0.5em;
   padding: 0.5em;
 }
@@ -132,5 +132,8 @@ text-align:left;
 vertical-align:top;
 font-size: 12px;
 }
+
+
+
 
 
