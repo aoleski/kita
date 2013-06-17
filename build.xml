@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default = "put" name = "kita">
+    <property file="build.properties"/>
+
+    <target name="put" depends="" >
+            <echo message="Uploading to  ${remote} "/>
+
+           <exec command="pscp -pw ${pwd} kontakt.php ${remote}"/>
+        </target>
+
+</project>

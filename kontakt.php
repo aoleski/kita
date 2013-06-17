@@ -1,4 +1,43 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<?php
+
+function getErrorInfo()
+{
+  $info= ' get : '.print_r($_GET, true).' post '.print_r($_POST, true);
+  $info .= ' session : '.print_r($_SESSION, true);
+  $info .= ' client '.$_SERVER['REMOTE_ADDR'];
+  return $info;
+}
+
+function sendErrorMail($message)
+{
+   error_log($message.getErrorInfo());
+   error_log($message.getErrorInfo(), 1, "aoleski@evodion.de");
+}
+
+function sendEmail($name, $email, $phonenumber, $message) {
+
+    $text = "Name: $name, Email: $email, Telefon: $phonenumber, Nachricht:$message" ;
+
+
+    $from = "website@kitaharmsstrasse.de";
+    $header = "From:" . $from;
+    $subject= "Kontaktanfrage kitaharmmstrasse.de";
+
+	# Mail it out
+	$success= mail("aoleski@evodion.de", $subject, $text, $header);
+	if (!$success)
+	{
+	     sendErrorMail();
+	     return ("Es gab einen Fehler auf dem Server bei der Verarbeitung des Formulars. Bitte schicken Sie direkt eine Mail an kitaharmsstrasse@web.de");
+	}
+	else
+	{
+	   return ' <h3 class="Stil1">Vielen Dank!<br /> <br /> Ihre Nachricht wurde erfolgreich übermittelt.</h3>  <h3 class="Stil1">Unser Team wird sich ggf. bei Ihnen melden.</h3><p/><h3 class="Stil1"><a href="kontakt.php">Formular erneut anzeigen</a> </h3>';
+	}
+
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>KiTa Harmsstrasse - Unsere Kinder - Unsere Zukunft!</title>
@@ -146,8 +185,18 @@ Harmsstraße 21 <br />
                   <br />
                   <strong>Mit den ÖPNV:</strong> Der Weg vom  Harburger S- und Fernbahnhof zu uns beträgt ca. 15 Gehminuten, von der  S-Bahn-Station Rathaus ca. 10 Minuten. Die Buslinien 144, 145, 245 und 340  halten in der Bremer Straße, Haltestelle Harmstraße. Von dort sind es zu Fuß 5  Minuten bis zu unserer Einrichtung.</p></td>
             <td width="461" valign="top" ><div align="right" >
+            <?php
+            if(isset($_POST["submit"]) && $_POST["submit"]=="Abschicken")
+            {
+
+               $result =   sendEmail($_POST["name"],$_POST["email"],$_POST["phonenumber"] , $_POST["message"]);
+               echo $result;
+            }
+            else
+            {
+            ?>
                 <script type="text/javascript">$(document).ready(function() {$("#contactform").validate();});</script>
-               <form name="contactform" >
+               <form name="contactform"  method="post" >
                    <div>
                    <label for="name">Name: </label>
                    <input type="text" class="required " style=" " id="name" name="name" value="" maxlength="50" />
@@ -169,7 +218,11 @@ Harmsstraße 21 <br />
                    <input type="submit" value="Abschicken" name="submit" class="submit">
                    </div>
                </form>
-              </div></td>
+              </div>
+              <?
+              }
+              ?>
+              </td>
           </tr>
         </table>
         <h2>Wie kommt Ihr Kind in den Kindergarten? </h2>
