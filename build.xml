@@ -6,6 +6,7 @@
             <echo message="Uploading to  ${remote} "/>
 
            <exec command="pscp -pw ${pwd} kontakt.php ${remote}"/>
+        <exec command="pscp -pw ${pwd} css/* ${remote}/css"/>
         </target>
 
 </project>

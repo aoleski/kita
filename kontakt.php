@@ -11,7 +11,7 @@ function getErrorInfo()
 function sendErrorMail($message)
 {
    error_log($message.getErrorInfo());
-   error_log($message.getErrorInfo(), 1, "aoleski@evodion.de");
+   error_log($message.getErrorInfo(), 1, "ana.oleski@gmail.com");
 }
 
 function sendEmail($name, $email, $phonenumber, $message) {
@@ -19,15 +19,16 @@ function sendEmail($name, $email, $phonenumber, $message) {
     $text = "Name: $name, Email: $email, Telefon: $phonenumber, Nachricht:$message" ;
 
 
-    $from = "website@kitaharmsstrasse.de";
-    $header = "From:" . $from;
+    $from = "no-reply@kitaharmsstrasse.de";
+    $header = "From:" . $from. "\r\n";
+    $header .= 'Cc:ana.oleski@gmail.com' . "\r\n";
     $subject= "Kontaktanfrage kitaharmmstrasse.de";
-
+    $to= "kitaharmsstrasse@web.de";
 	# Mail it out
-	$success= mail("aoleski@evodion.de", $subject, $text, $header);
+	$success= mail($to, $subject, $text, $header);
 	if (!$success)
 	{
-	     sendErrorMail();
+	     sendErrorMail("Fehler in kitaharmstrasse.de/kontakt.php : Emailversand (to = $to header = $header ) hat nicht geklappt. ");
 	     return ("Es gab einen Fehler auf dem Server bei der Verarbeitung des Formulars. Bitte schicken Sie direkt eine Mail an kitaharmsstrasse@web.de");
 	}
 	else
