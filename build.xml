@@ -5,8 +5,10 @@
     <target name="put" depends="" >
             <echo message="Uploading to  ${remote} "/>
 
-           <exec command="pscp -pw ${pwd} kontakt.php ${remote}"/>
+        <exec command="pscp -pw ${pwd} kontakt.php ${remote}"/>
         <exec command="pscp -pw ${pwd} css/* ${remote}/css"/>
+        <exec command="pscp -pw ${pwd} kita*.html ${remote}"/>
+
         </target>
 
 </project>
