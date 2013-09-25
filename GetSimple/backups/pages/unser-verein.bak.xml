@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item><pubDate>Wed, 25 Sep 2013 11:58:28 +0200</pubDate><title><![CDATA[Unser Verein]]></title><url><![CDATA[unser-verein]]></url><meta><![CDATA[]]></meta><metad><![CDATA[]]></metad><menu><![CDATA[Unser Verein]]></menu><menuOrder><![CDATA[0]]></menuOrder><menuStatus><![CDATA[Y]]></menuStatus><template><![CDATA[template.php]]></template><parent><![CDATA[]]></parent><content><![CDATA[&lt;p&gt;(% gallery name=vorstand %)&lt;/p&gt;
+]]></content><private><![CDATA[]]></private><author><![CDATA[kita]]></author></item>
