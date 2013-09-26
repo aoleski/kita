@@ -20,12 +20,12 @@ a:hover, a:focus {
 
 /* HEADER */
 .header {
-	background: #6B94B4;
-	background: -moz-linear-gradient(top, #6B94B4 0%, #316594 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6B94B4), color-stop(100%,#316594)); 
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6B94B4', endColorstr='#316594',GradientType=0 );
+	background: #F7CE3E;
+	background: -moz-linear-gradient(top, #F7CE3E 0%, #F7A515 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F7CE3E), color-stop(100%,#F7A515)); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F7CE3E', endColorstr='#F7A515',GradientType=0 );
 	height:80px;
-	border-bottom:#2B5780 1px solid;
+	border-bottom:#F7CE3E 1px solid;
 }
 
 /* HEADER: breadcrumbs */

@@ -21,3 +21,29 @@
 [25-Sep-2013 11:58:28 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/GetSimple/admin/changedata.php on line 201
 [25-Sep-2013 13:17:17 Europe/Berlin] PHP Notice:  Undefined variable: SITEURL in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/admin_edit.php on line 112
 [25-Sep-2013 13:18:16 Europe/Berlin] PHP Notice:  Undefined variable: SITEURL in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/admin_edit.php on line 112
+[25-Sep-2013 13:44:02 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/GetSimple/admin/changedata.php on line 198
+[25-Sep-2013 13:44:02 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/GetSimple/admin/changedata.php on line 201
+[25-Sep-2013 13:44:37 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[25-Sep-2013 13:52:44 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[26-Sep-2013 09:41:12 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[26-Sep-2013 09:56:09 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[26-Sep-2013 09:57:09 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[26-Sep-2013 10:00:09 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[26-Sep-2013 10:00:59 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[26-Sep-2013 10:14:18 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[26-Sep-2013 10:22:55 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[26-Sep-2013 10:27:26 Europe/Berlin] PHP Notice:  Undefined variable: events_list in /var/www/virtual/oleski/html/kita/GetSimple/plugins/calendar/inc/client_calendarEvents.php on line 75
+[26-Sep-2013 12:10:21 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/GetSimple/admin/changedata.php on line 198
+[26-Sep-2013 12:10:21 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/GetSimple/admin/changedata.php on line 201
+[26-Sep-2013 12:12:40 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/GetSimple/admin/inc/basic.php on line 181
+[26-Sep-2013 12:13:14 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/GetSimple/admin/inc/basic.php on line 181
+[26-Sep-2013 12:13:43 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/GetSimple/admin/inc/basic.php on line 181
+[26-Sep-2013 12:13:47 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/GetSimple/admin/inc/basic.php on line 181
+[26-Sep-2013 12:13:50 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/GetSimple/admin/inc/basic.php on line 181
+[26-Sep-2013 12:13:53 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/GetSimple/admin/inc/basic.php on line 181
+[26-Sep-2013 12:14:02 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/GetSimple/admin/inc/basic.php on line 181
+[26-Sep-2013 12:14:16 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/GetSimple/admin/inc/basic.php on line 181
+[26-Sep-2013 12:34:32 Europe/Berlin] PHP Fatal error:  Call to undefined function c_calendarevents() in /var/www/virtual/oleski/html/kita/GetSimple/theme/Kita/calendar.php on line 27
+[26-Sep-2013 12:34:35 Europe/Berlin] PHP Fatal error:  Call to undefined function c_calendarevents() in /var/www/virtual/oleski/html/kita/GetSimple/theme/Kita/calendar.php on line 27
+[26-Sep-2013 13:16:38 Europe/Berlin] PHP Fatal error:  Call to undefined function c_calendarevents() in /var/www/virtual/oleski/html/kita/GetSimple/theme/Kita/calendar.php on line 27
+[26-Sep-2013 13:21:28 Europe/Berlin] PHP Fatal error:  Call to undefined function c_calendarevents() in /var/www/virtual/oleski/html/kita/GetSimple/theme/Kita/calendar.php on line 27

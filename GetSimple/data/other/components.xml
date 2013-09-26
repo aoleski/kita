@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<channel><item><title><![CDATA[header]]></title><slug>header</slug><value><![CDATA[ &lt;img src=&quot;&lt;?php get_site_url(); ?&gt;data/uploads/images/titlepic01.jpg&quot; alt=&quot;spielende Kinder&quot; height=&quot;160&quot; width=&quot;940&quot;&gt;]]></value></item><item><title><![CDATA[Sidebar]]></title><slug>sidebar</slug><value><![CDATA[&lt;h2&gt;GetSimple Features&lt;/h2&gt;
-&lt;ul&gt; 
-&lt;li&gt;XML based data storage&lt;/li&gt; 
-&lt;li&gt;Best-in-Class User Interface&lt;/li&gt; 
-&lt;li&gt;&#039;Undo&#039; protection &amp;amp; backups&lt;/li&gt; 
-&lt;li&gt;Easy to theme&lt;/li&gt; 
-&lt;li&gt;Great documentation&lt;/li&gt; 
-&lt;li&gt;Growing community&lt;/li&gt; 
-&lt;/ul&gt;
-&lt;p&gt;This is your sidebar text. Please change me in &lt;em&gt;Theme -&gt; Edit Components&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://get-simple.info/download/&quot;&gt;Download the Latest GetSimple&lt;/a&gt;&lt;/p&gt;]]></value></item><item><title><![CDATA[Tagline]]></title><slug>tagline</slug><value><![CDATA[Just Another GetSimple Website]]></value></item></channel>
+<channel><item><title><![CDATA[footer]]></title><slug>footer</slug><value><![CDATA[&lt;div class = &quot;footer&quot;&gt;
+ • KiTa Harmsstraße • Harmsstraße 21 • 21073 Hamburg • Tel. 040/ 767 545 12 • Fax: 040/ 767 585 69
+&lt;/div&gt;]]></value></item><item><title><![CDATA[header]]></title><slug>header</slug><value><![CDATA[ &lt;img src=&quot;&lt;?php get_site_url(); ?&gt;data/uploads/images/titlepic01.jpg&quot; alt=&quot;spielende Kinder&quot; height=&quot;160&quot; width=&quot;940&quot;&gt;]]></value></item><item><title><![CDATA[Sidebar]]></title><slug>sidebar</slug><value><![CDATA[]]></value></item><item><title><![CDATA[Tagline]]></title><slug>tagline</slug><value><![CDATA[Just Another GetSimple Website]]></value></item></channel>

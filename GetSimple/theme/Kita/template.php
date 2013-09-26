@@ -15,26 +15,20 @@ $innov_settings = Innovation_Settings();
 # Include the header template
 include('header.inc.php'); 
 ?>
-	
+	 
 	<div class="wrapper clearfix">
 		<!-- page content -->
 		<article>
 			<section>
-				
 				<!-- title and content -->
 				<h1><?php get_page_title(); ?></h1>
 				<?php get_page_content(); ?>
+				<?php get_component('footer'); ?>
 				
-				<!-- page footer -->
-				<div class="footer">
-					<p>Published on <time datetime="<?php get_page_date('Y-m-d'); ?>" pubdate><?php get_page_date('F jS, Y'); ?></time></p>
-				</div>
 			</section>
 			
 		</article>
 		
-		<!-- include the sidebar template -->
-		<?php include('sidebar.inc.php'); ?>
 	</div>
 
 <!-- include the footer template -->
