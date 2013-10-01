@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channel><item><title><![CDATA[footer]]></title><slug>footer</slug><value><![CDATA[&lt;div class = &quot;footer&quot;&gt;
+ • KiTa Harmsstraße • Harmsstraße 21 • 21073 Hamburg • Tel. 040/ 767 545 12 • Fax: 040/ 767 585 69
+&lt;/div&gt;]]></value></item><item><title><![CDATA[header]]></title><slug>header</slug><value><![CDATA[ &lt;img src=&quot;&lt;?php get_site_url(); ?&gt;data/uploads/images/titlepic01.jpg&quot; alt=&quot;spielende Kinder&quot; height=&quot;160&quot; width=&quot;940&quot;&gt;]]></value></item><item><title><![CDATA[Sidebar]]></title><slug>sidebar</slug><value><![CDATA[]]></value></item><item><title><![CDATA[Tagline]]></title><slug>tagline</slug><value><![CDATA[Just Another GetSimple Website]]></value></item></channel>
