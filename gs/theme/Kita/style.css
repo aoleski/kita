@@ -215,6 +215,20 @@ article section .footer p {
 
 }
 
+
+table {
+text-align:left;
+vertical-align:top;
+font-size: 0.9 rem;
+column-width: auto
+	
+}
+
+table.jahresplan td {
+ padding: 0.1 rem 1rem;
+	
+}
+
 /* FOOTER */
 footer {
     float:left;
