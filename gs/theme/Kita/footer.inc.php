@@ -12,6 +12,8 @@
 	<footer class="clearfix" >
 		
 		<?php get_footer(); ?>
+		<?php get_component('footer'); ?>
+			
 	</footer>
 	 
 </body>

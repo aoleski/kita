@@ -118,8 +118,6 @@ article {
 	width:90%;
 	max-width:950px;
 	min-height:500px;
-    background: transparent url(images/downline.jpg) 90% bottom no-repeat;
-	background-size: 90% auto;
 
 }
 article h1 {
@@ -216,9 +214,14 @@ article section .footer p {
 
 /* FOOTER */
 footer {
-	padding:10% 0;
+    float:left;
+    width:90%;
+    max-width:950px;
+	padding-top:10%; padding-right: 10%;padding-left: 10%;padding-bottom: 0;
 	text-shadow: 1px 1px 0 rgba(255,255,255,.8);
-	font-size:0.7rem;
+	font-size:0.8rem;
+    background: transparent url(images/downline.jpg) 80% bottom no-repeat;
+  	background-size: 100% auto;
 }
 footer .left {
 	float:left;

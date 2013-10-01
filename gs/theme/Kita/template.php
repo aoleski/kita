@@ -23,11 +23,10 @@ include('header.inc.php');
 				<!-- title and content -->
 				<h1><?php get_page_title(); ?></h1>
 				<?php get_page_content(); ?>
-				<?php get_component('footer'); ?>
-				
 			</section>
-			
+		
 		</article>
+		
 		
 	</div>
 
