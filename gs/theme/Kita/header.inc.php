@@ -42,22 +42,20 @@
 			<div class="wrapper">
 				
 				<!-- logo/sitename -->
-				<a href="<?php get_site_url(); ?>" id="logo" ><?php get_site_name(); ?></a>
+				<a href="<?php get_site_url(); ?>" id="logo" ><img src="<?php get_theme_url(); ?>/images/logo.png" alt ="<?php get_site_name(); ?>" title = "<?php get_site_name(); ?>"/> </a>
 				
-				<!-- main navigation -->
-				<nav id="main-nav">
-					<ul>
-						<?php get_navigation(get_page_slug(FALSE)); ?>
-					</ul>
-				</nav>
+
 			</div>
 		</div>
-		
-		<!-- breadcrumbs: only show when NOT on homepage -->
-		<p class="breadcrumbs" >
-			<span class="wrapper">
-				<a href="<?php get_site_url(); ?>">Home</a> &nbsp;&nbsp;&#149;&nbsp;&nbsp; <?php Innovation_Parent_Link(get_parent(FALSE)); ?> <b><?php get_page_clean_title(); ?></b>
-			</span>
-		</p>
+		<div>
+		  		<!-- main navigation -->
+          				<nav id="main-nav">
+          					<ul>
+          						<?php get_navigation(get_page_slug(FALSE)); ?>
+          					</ul>
+          				</nav>
+		</div>
+
+
 		
   </header>
