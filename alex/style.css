@@ -1,5 +1,20 @@
 body {
-    background:#F7CE3E;
+    margin:50px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size:90% ;
+    background-color: #fffff0;
+}
+
+h3 {
+    color: #0055aa;
+}
+
+input
+{
+    margin: 5px;
+    color: #316ac5;
+    background-color: #dff1ff;
+}
+
+p{
+    margin: 10px;
 }

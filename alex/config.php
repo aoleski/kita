@@ -39,5 +39,3 @@ function formatSizeUnits($bytes)
     return $bytes;
 }
 ?>
-
-?>

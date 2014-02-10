@@ -28,11 +28,15 @@ if (!$loginOK) {
 
 <h3>Salut Alex, sper sa mearga </h3>
 
+<p>
+
 <form action="upload.php" method="POST"
       id="myForm" enctype="multipart/form-data">
     <input type="file" name="file"><br>
     <input type="submit" value="Start Upload">
 </form>
+
+</p>
 
 
 </body>
