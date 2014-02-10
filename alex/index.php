@@ -54,24 +54,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_FILES["file"])) {
 ?>
 <html>
 <head>
-    <title>File Upload Progress Bar</title>
+    <title>File Upload </title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <h3>Salut Alex,   sper sa mearga </h3>
-<div id="bar_blank">
-    <div id="bar_color"></div>
-</div>
-<div id="status"></div>
+
 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST"
-      id="myForm" enctype="multipart/form-data" target="hidden_iframe">
-    <input type="hidden" value="myForm"
-           name="<?php echo ini_get("session.upload_progress.name"); ?>">
-    <input type="file" name="file"><br>
+      id="myForm" enctype="multipart/form-data" >
+     <input type="file" name="file"><br>
     <input type="submit" value="Start Upload">
 </form>
-<iframe id="hidden_iframe" name="hidden_iframe" src="about:blank"></iframe>
-<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
 

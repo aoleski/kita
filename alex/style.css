@@ -1,15 +1,5 @@
-#bar_blank {
-    border: solid 1px #000;
-    height: 20px;
-    width: 300px;
-}
-
-#bar_color {
-    background-color: #006666;
-    height: 20px;
-    width: 0px;
-}
-
-#bar_blank, #hidden_iframe {
-    display: none;
+body {
+    background:#F7CE3E;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size:90% ;
 }
