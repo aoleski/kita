@@ -7,6 +7,6 @@ $uploadUser = "alex";
 $uploadPassword = "melcu";
 
 //mail on import error
-$errrormail="ana.oleski@gmail.com"
+$mail_ana="ana.oleski@gmail.com"
 
 ?>
