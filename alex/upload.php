@@ -6,9 +6,22 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('HTTP/1.0 401 Unauthorized');
     exit;
 } else {
+
+?>
+<html>
+<head>
+    <title> Upload Result</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<?
 	if ($_SERVER['PHP_AUTH_USER'] == $uploadUser && $_SERVER['PHP_AUTH_PW'] == $uploadPassword)
 	{
+
+
         $ip = $_SERVER['REMOTE_ADDR'];
+
         if ($_FILES["file"]["error"] > 0) {
             echo "Error: " . $_FILES["file"]["error"] . "<br>";
             error_log($ip ."  error: " . $_FILES["file"]["error"], 1, $mail_ana);
@@ -25,8 +38,10 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
             if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
                 echo "Copied from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path;
                 error_log($ip ." uploaded " . $target_path . " size " . $size, 1, $mail_ana);
+
+                echo '<p> Mersi!</p>!'  ;
             } else {
-                echo "move_uploaded_file failed from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path;
+                echo "move uploaded_file failed from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path;
                 error_log($ip ." - move_uploaded_file failed from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path, 1, $mail_ana);
 
             }
@@ -36,3 +51,5 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 }
 
 ?>
+</body>
+</html>
