@@ -17,11 +17,11 @@ function formatSizeUnits($bytes)
     }
     elseif ($bytes >= 1048576)
     {
-        $bytes = number_format($bytes / 1048576, 2) . ' MB';
+        $bytes = number_format($bytes / 1048576,0) . ' MB';
     }
     elseif ($bytes >= 1024)
     {
-        $bytes = number_format($bytes / 1024, 2) . ' KB';
+        $bytes = number_format($bytes / 1024, 0) . ' KB';
     }
     elseif ($bytes > 1)
     {
