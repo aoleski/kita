@@ -10,11 +10,13 @@ h3 {
 
 input
 {
-    margin: 5px;
-    color: #316ac5;
-    background-color: #dff1ff;
+    margin: 10px;
 }
 
+form
+{
+    background-color: #dff1ff;
+}
 p{
     margin: 10px;
 }

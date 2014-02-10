@@ -9,6 +9,8 @@ $uploadPassword = "melcu";
 //mail on import error
 $mail_ana="ana.oleski@gmail.com";
 
+setlocale(LC_ALL, 'en');
+
 function formatSizeUnits($bytes)
 {
     if ($bytes >= 1073741824)
