@@ -6,34 +6,73 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="'.$uploadRealm.'"');
     header('HTTP/1.0 401 Unauthorized');
     exit;
-} else {
-    if ($_SERVER['PHP_AUTH_USER'] == $uploadUser && $_SERVER['PHP_AUTH_PW'] == $uploadPassword)
+}
+
+
+ $loginOK = $_SERVER['PHP_AUTH_USER'] == $uploadUser && $_SERVER['PHP_AUTH_PW'] == $uploadPassword ;
+    if (!$loginOK)
+    {
+        echo '<html>
+<body>
+<h3>Login not OK. Close browser and try again</h3>
+</body>
+</html>';
+        exit;
+        }
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_FILES["file"])) {
+
+    if ($_FILES["file"]["error"] > 0)
+    {
+        echo "Error: " . $_FILES["file"]["error"] . "<br>";
+    }
+    else
     {
 
-        if ($_FILES["file"]["error"] > 0)
+        echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+        echo "Type: " . $_FILES["file"]["type"] . "<br>";
+        echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+
+        $target_path = dirname(__FILE__) . '/';
+        $target_path = $target_path . basename( $_FILES['file']['name']);
+
+        if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path))
         {
-            echo "Error: " . $_FILES["file"]["error"] . "<br>";
+            echo "Copied from ". $_FILES["file"]["tmp_name"]." to  " . $target_path;
         }
         else
         {
+            echo "move_uploaded_file failed from ". $_FILES["file"]["tmp_name"]." to  " . $target_path;
 
-            echo '<html>
-<body>
-<h3>Salut Alex,   sper sa mearga </h3>
-
-<form action="upload.php" method="post"
-enctype="multipart/form-data">
-<label for="file">Filename:</label>
-<input type="file" name="file" id="file"><br>
-<input type="submit" name="submit" value="Submit">
-</form>
-
-</body>
-</html>';
         }
 
     }
-}
 
+}
 ?>
+<html>
+<head>
+    <title>File Upload Progress Bar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h3>Salut Alex,   sper sa mearga </h3>
+<div id="bar_blank">
+    <div id="bar_color"></div>
+</div>
+<div id="status"></div>
+<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST"
+      id="myForm" enctype="multipart/form-data" target="hidden_iframe">
+    <input type="hidden" value="myForm"
+           name="<?php echo ini_get("session.upload_progress.name"); ?>">
+    <input type="file" name="file"><br>
+    <input type="submit" value="Start Upload">
+</form>
+<iframe id="hidden_iframe" name="hidden_iframe" src="about:blank"></iframe>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+
 
