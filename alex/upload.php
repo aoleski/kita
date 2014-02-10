@@ -9,32 +9,29 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 	if ($_SERVER['PHP_AUTH_USER'] == $uploadUser && $_SERVER['PHP_AUTH_PW'] == $uploadPassword)
 	{
 
-		if ($_FILES["file"]["error"] > 0)
-          {
-          echo "Error: " . $_FILES["file"]["error"] . "<br>";
-          }
-        else
-          {
+        if ($_FILES["file"]["error"] > 0) {
+            echo "Error: " . $_FILES["file"]["error"] . "<br>";
+            error_log("Error: " . $_FILES["file"]["error"], 1, $mail_ana);
+        } else {
 
-             echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+            echo "Upload: " . $_FILES["file"]["name"] . "<br>";
             echo "Type: " . $_FILES["file"]["type"] . "<br>";
-            echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+            $size = formatSizeUnits($_FILES["file"]["size"]);
+            echo "Size: " . $size . "<br>";
 
             $target_path = dirname(__FILE__) . '/';
-            $target_path = $target_path . basename( $_FILES['file']['name']);
+            $target_path = $target_path . basename($_FILES['file']['name']);
 
-          	if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path))
-          	{
-          	    echo "Copied from ". $_FILES["file"]["tmp_name"]." to  " . $target_path;
-          	}
-            else
-            {
-                echo "move_uploaded_file failed from ". $_FILES["file"]["tmp_name"]." to  " . $target_path;
+            if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
+                echo "Copied from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path;
+                error_log("Uploaded " . $target_path . " size " . $size, 1, $mail_ana);
+            } else {
+                echo "move_uploaded_file failed from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path;
+                error_log("move_uploaded_file failed from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path, 1, $mail_ana);
 
             }
 
-          }
-
+        }
 	}
 }
 
