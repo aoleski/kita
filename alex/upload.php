@@ -15,32 +15,51 @@ if (!$loginOK) {
 }
 
 
-$ip = $_SERVER['REMOTE_ADDR'];
+    $ip = $_SERVER['REMOTE_ADDR'];
 
-if ($_FILES["file"]["error"] > 0) {
-    echo "Error: " . $_FILES["file"]["error"] . "<br>";
-    error_log($ip . "  error: " . $_FILES["file"]["error"], 1, $mail_ana);
-} else {
+    $filename = $_SERVER['HTTP_X_FILE_NAME'];
+    $size = $_SERVER['HTTP_X_FILE_SIZE'];
+    $out=false;
+try {
 
-    echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-    echo "Type: " . $_FILES["file"]["type"] . "<br>";
-    $size = formatSizeUnits($_FILES["file"]["size"]);
-    echo "Size: " . $size . "<br>";
 
-    $target_path = dirname(__FILE__) . '/';
-    $target_path = $target_path . basename($_FILES['file']['name']);
-
-    if (move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
-        echo "Copied from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path;
-        error_log($ip . " uploaded " . $target_path . " size " . $size, 1, $mail_ana);
-
-        echo '<p> Mersi!</p>';
-    } else {
-        echo "move uploaded_file failed from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path;
-        error_log($ip . " - move_uploaded_file failed from " . $_FILES["file"]["tmp_name"] . " to  " . $target_path, 1, $mail_ana);
-
+    $in = fopen('php://input', 'r');
+    if (empty($in) ||$in==false)
+    {
+        throw new Exception("Couldn't open php://input");
     }
 
+    if (empty($_SERVER['HTTP_X_FILE_NAME']) )
+    {
+        throw new Exception('HTTP_X_FILE_NAME not set in request header');
+    }
+    $fileWithPath= $_SERVER['DOCUMENT_ROOT'] .'/'.$filename;
+    $out = fopen($fileWithPath, 'wb');
+    error_log($ip . " tried to open " . $fileWithPath . " - " . $out);
+    if (empty($out) || $out==false)
+    {
+        throw new Exception("Couldn't open "+$filename.' operation result = '+$out);
+    }
+    while ($data = fread($in, 1024)) fwrite($out, $data);
+    fclose($out);
+    echo $filename. ' uploaded. Thanx!';
+    $message= $ip . " uploaded " . $filename . " size " . $size. ' size on disk '.formatSizeUnits(filesize($fileWithPath));
+    error_log($message);
+    error_log($message, 1, $mail_ana);
+
+} catch (Exception $e) {
+    echo 'Greseala!.  Primesc  un mail in cazul asta asa ca abandoneaza upload-ul pana auzi de la mine ca am rezolvat greseala.';
+    $message =   $ip . " upload " . $filename . " size " . $size." error: ".$e;
+    $message= '   $_SERVER variables';
+    while (list($var,$value) = each ($_SERVER)) {
+        $message.= $var.'=' .$value.'; ';
+    }
+    error_log($message);
+    error_log($message, 1, $mail_ana);
+    fclose($out);
 
 }
+
+
+
 ?>

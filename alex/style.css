@@ -1,22 +1,27 @@
 body {
     margin:50px;
     font-family: Verdana, Arial, Helvetica, sans-serif;
-    background-color: #fffff0;
+    background-color: #f0f8ff;
+    font-size: 90%;
+    line-height:120% ;
+
 }
 
-h3 {
-    color: #0055aa;
-}
 
-input
+
+.row{
+   font-style: italic;
+    color: #222780;
+    margin-top: 1.2em;
+    margin-bottom: 1.2em;
+}
+label
 {
-    margin: 10px;
+    margin-right: 1.1em;
 }
-
-form
+#progress
 {
-    background-color: #dff1ff;
-}
-p{
-    margin: 10px;
+    margin-top: 1.2em;
+    color: #8b0000;
+    font-weight: bold;
 }
