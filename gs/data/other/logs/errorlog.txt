@@ -47,3 +47,25 @@
 [26-Sep-2013 12:34:35 Europe/Berlin] PHP Fatal error:  Call to undefined function c_calendarevents() in /var/www/virtual/oleski/html/kita/GetSimple/theme/Kita/calendar.php on line 27
 [26-Sep-2013 13:16:38 Europe/Berlin] PHP Fatal error:  Call to undefined function c_calendarevents() in /var/www/virtual/oleski/html/kita/GetSimple/theme/Kita/calendar.php on line 27
 [26-Sep-2013 13:21:28 Europe/Berlin] PHP Fatal error:  Call to undefined function c_calendarevents() in /var/www/virtual/oleski/html/kita/GetSimple/theme/Kita/calendar.php on line 27
+[05-Mar-2014 18:46:41 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[05-Mar-2014 18:46:48 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[05-Mar-2014 18:47:00 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[05-Mar-2014 18:49:35 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 198
+[05-Mar-2014 18:49:35 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 201
+[05-Mar-2014 18:51:38 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 198
+[05-Mar-2014 18:51:38 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 201
+[05-Mar-2014 18:52:58 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 198
+[05-Mar-2014 18:52:58 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 201
+[05-Mar-2014 18:53:05 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 198
+[05-Mar-2014 18:53:05 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 201
+[05-Mar-2014 18:53:49 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 198
+[05-Mar-2014 18:53:49 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 201
+[05-Mar-2014 18:54:33 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 198
+[05-Mar-2014 18:54:33 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 201
+[06-Mar-2014 10:43:11 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-Mar-2014 10:43:16 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-Mar-2014 10:44:34 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-Mar-2014 10:48:30 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-Mar-2014 11:17:58 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-Mar-2014 21:22:37 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 198
+[06-Mar-2014 21:22:37 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 201
