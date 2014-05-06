@@ -44,7 +44,7 @@ header nav ul {
 header nav li {
 	display:block;
 	float:left;
-	margin:0 0 0 10px;
+	margin:5px 0 0 10px;
 }
 header nav li a {
 	display:block;
