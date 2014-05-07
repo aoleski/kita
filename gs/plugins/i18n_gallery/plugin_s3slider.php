@@ -135,7 +135,7 @@ function i18n_gallery_s3slider_content($gallery) {
         <div class="clear <?php echo $id; ?>Image"></div>
      </ul>
   </div> 
-  <script type="text/javascript" charset="utf-8">
+  <script type="text/javascript">
     $(document).ready(function() {
        $('#<?php echo $id; ?>').s3Slider({
 <?php echo (intval(@$gallery['interval'])) ? "timeOut: ".intval(@$gallery['interval']) : "timeout: 5000"; ?>

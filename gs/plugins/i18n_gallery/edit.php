@@ -1,5 +1,4 @@
 <?php
-
 function i18n_gallery_from_request($languages) {
   $gallery = array('items' => array());
   $gallery['title'] = @$_POST['post-title'];
@@ -81,7 +80,6 @@ if (function_exists('return_i18n_default_language')) {
     }
   }
 }
-if (!file_exists(GSDATAPAGESPATH.'gallery.xml')) copy(GSPLUGINPATH.'i18n_gallery/gallery.xml',GSDATAPAGESPATH.'gallery.xml');
 $success = false;
 $name = @$_GET['name'];
 if (!I18nGallery::checkPrerequisites()) {
@@ -124,8 +122,8 @@ if (!I18nGallery::checkPrerequisites()) {
 $settings = i18n_gallery_settings();
 $w = intval(@$settings['adminthumbwidth']) > 0 ? intval($settings['adminthumbwidth']) : I18N_GALLERY_DEFAULT_THUMB_WIDTH;
 $h = intval(@$settings['adminthumbheight']) > 0 ? intval($settings['adminthumbheight']) : I18N_GALLERY_DEFAULT_THUMB_HEIGHT;
-$viewlink = find_url('gallery',null);
-$viewlink .= (strpos($viewlink,'?') === false ? '?' : '&amp;') . 'name=' . $name;
+$viewlink = function_exists('find_i18n_url') ? find_i18n_url('index',null) : find_url('index',null);
+$viewlink .= (strpos($viewlink,'?') === false ? '?' : '&amp;') . 'name=' . $name . '&amp;preview-gallery';
 $plugins = i18n_gallery_plugins();
 $plugins = subval_sort($plugins,'name');
 // default gallery type
@@ -218,9 +216,18 @@ if (!@$gallery['type']) $gallery['type'] = @$settings['type'] ? $settings['type'
     } else {
       $s = $item['size'] . ' B';
     }
+    $pos = strrpos($item['filename'],'/');
+    if ($pos === false) $pos = -1;
+    $thumbfile = substr($item['filename'], 0, $pos+1) . 'i18npic.' . ($w ? $w.'x' : '0x') . ($h ? $h.'.' : '0.') . substr($item['filename'], $pos+1);
+    $thumbfile = substr($thumbfile , 0, strrpos($thumbfile ,'.')) . '.jpg';
+    if (file_exists(GSDATAPATH.'thumbs/'.$thumbfile)) {
+      $tlink = '../data/thumbs/'.$thumbfile;
+    } else {
+      $tlink = '../plugins/i18n_gallery/browser/pic.php?p='.urlencode($item['filename']).'&amp;w='.$w.'&amp;h='.$h;
+    }
 ?>
           <tr>
-            <td><img src="../plugins/i18n_gallery/browser/pic.php?p=<?php echo urlencode($item['filename']); ?>&amp;w=<?php echo $w; ?>&amp;h=<?php echo $h; ?>"/></td>
+            <td><img src="<?php echo $tlink; ?>"/></td>
             <td>
               <input type="hidden" name="post-item_<?php echo $i; ?>_filename" value="<?php echo htmlspecialchars($item['filename']); ?>"/>
               <span style="float:left;width:<?php echo 400-$w; ?>px"><?php echo htmlspecialchars($item['filename']); ?></span>

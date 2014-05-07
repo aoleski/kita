@@ -280,6 +280,7 @@
       </table>
 	    <p><em><b><?php echo count($filesSorted); ?></b> <?php i18n('TOTAL_FILES'); ?> (<?php echo fSize($totalsize); ?>)</em></p>
       <p><a href="javascript:void(0)" onclick="submitAllLinks()"><?php i18n('i18n_gallery/ADD_ALL_IMAGES'); ?></a></p>
+      <?php // foreach ($metadata as &$m) if (!@$m['title']) $m['title'] = basename($m['url']); ?>
       <script type='text/javascript'>
         // <![CDATA[
         var metadata = <?php echo json_encode($metadata); ?>;

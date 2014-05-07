@@ -1,6 +1,6 @@
 <?php
 i18n_gallery_register('cycle', 'cycle', 
-  '<strong>cylce</strong> is a slideshow plugin that supports many different types of transition effects.<br/>'.
+  '<strong>cycle</strong> is a slideshow plugin that supports many different types of transition effects.<br/>'.
   'License: MIT and GPL<br/>'.
   '<a target="_blank" href="http://jquery.malsup.com/cycle/">http://jquery.malsup.com/cycle/</a>',
   'i18n_gallery_cycle_edit', 'i18n_gallery_cycle_header', 'i18n_gallery_cycle_content');
@@ -152,7 +152,7 @@ function i18n_gallery_cycle_header($gallery) {
       .gallery-cycle .gallery-control-numbers a {
         font-size: 18px;
         border: 0 none;
-        text-decoration: none;
+        text-decoration: none;cylce
         color: #999999;
         padding: 0px 5px;
         margin: 0px 2px;
@@ -297,8 +297,8 @@ function i18n_gallery_cycle_content($gallery, $pic) {
 <?php
   } 
 ?>
-      <a class="prev" href="<?php i18n_gallery_pic_link($gallery,$pic>0 ? $pic-1 : $count-1); ?>"><img src="<?php echo $SITEURL; ?>plugins/i18n_gallery/images/cycle/prev.png"/></a>
-      <a class="next" href="<?php i18n_gallery_pic_link($gallery,$pic<$count-1 ? $pic+1 : 0); ?>"><img src="<?php echo $SITEURL; ?>plugins/i18n_gallery/images/cycle/next.png"/></a>
+      <a class="prev" href="<?php i18n_gallery_pic_link($gallery,$pic>0 ? $pic-1 : $count-1); ?>"><img src="<?php echo $SITEURL; ?>plugins/i18n_gallery/images/cycle/prev.png" alt=""/></a>
+      <a class="next" href="<?php i18n_gallery_pic_link($gallery,$pic<$count-1 ? $pic+1 : 0); ?>"><img src="<?php echo $SITEURL; ?>plugins/i18n_gallery/images/cycle/next.png" alt=""/></a>
     </div>
 <?php if (@$gallery['navtype']) { ?>
     <div class="gallery-control gallery-control-<?php echo $navtype; ?>">
@@ -306,7 +306,7 @@ function i18n_gallery_cycle_content($gallery, $pic) {
     </div>
 <?php } ?>
   </div>
-  <script type="text/javascript" charset="utf-8">
+  <script type="text/javascript">
     $(document).ready(function(){
 <?php if ($tp == 'overlay') { ?>
       // set text positions

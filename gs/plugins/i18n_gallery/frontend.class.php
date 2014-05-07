@@ -17,7 +17,7 @@ class I18nGalleryFrontend {
         if (isset($gallery[$fullkey])) { $title = $gallery[$fullkey]; break; }
       }
     }
-    $link = find_url($url,$parent);
+    $link = function_exists('find_i18n_url') ? find_i18n_url($url,$parent) : find_url($url,$parent);
     if ($tags) $link .= (strpos($link,'?') !== false ? '&' : '?').'imagetags='.urlencode($tags);
     if (isset($thumb)) {
       $item = @$gallery['items'][$thumb];

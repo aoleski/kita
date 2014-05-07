@@ -56,11 +56,11 @@ function i18n_gallery_thumb($gallery) {
 }
 
 function i18n_gallery_is_goto_image($pic) {
-  return $pic != null && intval($pic) >= 0;
+  return $pic !== null && intval($pic) >= 0;
 }
 
 function i18n_gallery_is_show_image($pic) {
-  return $pic != null && intval($pic) < 0;
+  return $pic !== null && intval($pic) < 0;
 }
 
 function i18n_gallery_item($gallery, $pic) {
@@ -74,9 +74,14 @@ function i18n_gallery_site_link() {
   return (string) $SITEURL;
 }
 
+function i18n_gallery_page_url() {
+  global $url, $parent;
+  return function_exists('find_i18n_url') ? find_i18n_url($url, $parent) : find_url($url, $parent);
+}
+
 function i18n_gallery_pic_link($gallery, $pic, $echo=true) {
   if ($pic >= 0) $pic = -$pic-1;
-  $link = get_page_url(true);
+  $link = i18n_gallery_page_url(true);
   $link .= strpos($link,'?') === false ? '?' : '&';
   foreach ($_GET as $key => $value) if ($key != 'pic' && $key != 'id') $link .= $key.'='.urlencode($value).'&'; 
   $link .= 'pic='.urlencode($gallery['name']).':'.$pic; 
@@ -100,7 +105,7 @@ function i18n_gallery_thumbfile($filename, $w, $h, $c) {
 }
 
 function i18n_gallery_back_link($echo=true) {
-  $link = get_page_url(true);
+  $link = i18n_gallery_page_url(true);
   $link .= strpos($link,'?') === false ? '?' : '&';
   foreach ($_GET as $key => $value) if ($key != 'pic' && $key != 'id') $link .= $key.'='.urlencode($value).'&'; 
   if ($echo) echo str_replace('&','&amp;',$link); else return $link;

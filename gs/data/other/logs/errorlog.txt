@@ -69,3 +69,13 @@
 [06-Mar-2014 11:17:58 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
 [06-Mar-2014 21:22:37 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 198
 [06-Mar-2014 21:22:37 Europe/Berlin] PHP Notice:  Undefined index: existing-url in /var/www/virtual/oleski/html/kita/gs/admin/changedata.php on line 201
+[06-May-2014 13:29:10 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-May-2014 13:30:04 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-May-2014 13:35:11 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-May-2014 13:36:55 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-May-2014 13:36:56 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-May-2014 13:36:56 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-May-2014 13:36:56 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-May-2014 13:36:56 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[06-May-2014 13:36:57 Europe/Berlin] PHP Warning:  Illegal string offset 'type' in /var/www/virtual/oleski/html/kita/gs/admin/inc/basic.php on line 181
+[07-May-2014 09:10:00 Europe/Berlin] PHP Warning:  fileperms(): stat failed for /var/www/virtual/oleski/html/kita/gs/backups/zip/ in /var/www/virtual/oleski/html/kita/gs/admin/inc/template_functions.php on line 100

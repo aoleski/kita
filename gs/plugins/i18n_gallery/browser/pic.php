@@ -1,5 +1,5 @@
 <?php
-define('CACHE_SECONDS', 3600*24); // for how long images should be cached
+define('CACHE_SECONDS', 3600); // for how long images should be cached
 
 $infile = preg_replace('/\.+\//', '', $_GET['p']);
 $gallery = @$_GET['g'];
@@ -42,8 +42,9 @@ if (defined('I18N_GALLERY_PIC_FILTER') && I18N_GALLERY_PIC_FILTER) {
   @session_write_close();
   # end check authorization
 }
-$maxWidth = @$_GET['w'];
-$maxHeight = @$_GET['h'];
+$maxWidth = @$_GET['w'] ? intval($_GET['w']) : null;
+$maxHeight = @$_GET['h'] ? intval($_GET['h']) : null;
+$displacement = @$_GET['d'] ? intval($_GET['d']) : null;
 $crop = @$_GET['c'] && $maxWidth && $maxHeight;
 $datadir = substr(dirname(__FILE__), 0, strrpos(dirname(__FILE__), DIRECTORY_SEPARATOR.'plugins')) . '/data/';
 $imagedir = $datadir . 'uploads/';
@@ -57,7 +58,9 @@ if (!$maxWidth && !$maxHeight) {
 } else {
   $pos = strrpos($infile,'/');
   if ($pos === false) $pos = -1;
-  $outfile = substr($infile, 0, $pos+1) . 'i18npic.' . ($crop ? 'C' : '') . ($maxWidth ? $maxWidth.'x' : '0x') . ($maxHeight ? $maxHeight.'.' : '0.') . substr($infile, $pos+1);
+  $outfile = substr($infile, 0, $pos+1) . 'i18npic.' . ($crop ? 'C' : '') . 
+             ($maxWidth ? $maxWidth : '0') . 'x' . ($maxHeight ? $maxHeight : '0') . 
+             ($displacement ? 'd'.$displacement : '') . '.' . substr($infile, $pos+1);
   $outfile = substr($outfile, 0, strrpos($outfile,'.')) . '.jpg';
   $thumbdir = $datadir . 'thumbs/';
   if (!file_exists($thumbdir.$outfile) || @filemtime($thumbdir.$outfile) < @filemtime($imagedir.$infile)) {
@@ -83,13 +86,18 @@ if (!$maxWidth && !$maxHeight) {
     if (!@$src) die('Can\' read image!');
     if ($crop) {
       $px = $py = 0;
+      $sx = $width;
+      $sy = $height;
+      $d = $displacement !== null ? $displacement/100.0 : 0.5;
       if ($maxWidth*$height > $width*$maxHeight) {
-        $py = (int) (0.5 * ($height - $width*$maxHeight/$maxWidth)); 
+        $sy = (int) ($width*$maxHeight/$maxWidth);
+        $py = (int) ($d * ($height - $width*$maxHeight/$maxWidth)); 
       } else {
-        $px = (int) (0.5 * ($width - $height*$maxWidth/$maxHeight));
+        $sx = (int) ($height*$maxWidth/$maxHeight);
+        $px = (int) ($d * ($width - $height*$maxWidth/$maxHeight));
       }
       $dst = imagecreatetruecolor($maxWidth, $maxHeight); 
-      imagecopyresampled($dst, $src, 0, 0, $px, $py, $maxWidth, $maxHeight, $width-2*$px, $height-2*$py);
+      imagecopyresampled($dst, $src, 0, 0, $px, $py, $maxWidth, $maxHeight, $sx, $sy);
     } else {
       if (!$maxHeight || ($maxWidth && $width/$height > $maxWidth/$maxHeight)) {
         $newWidth = (int) $maxWidth;
@@ -107,8 +115,8 @@ if (!$maxWidth && !$maxHeight) {
   }
   header('Content-Type: image/jpeg');
   // Caching headers: private caches only in case of restrictions on the image
-  header("Cache-Control: max-age=3600, private, must-revalidate");
-  header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
+  header("Cache-Control: max-age=".CACHE_SECONDS.", private, must-revalidate");
+  header("Expires: " . gmdate("D, d M Y H:i:s", time() + CACHE_SECONDS) . " GMT");
   readfile($thumbdir.$outfile);
 } 
 

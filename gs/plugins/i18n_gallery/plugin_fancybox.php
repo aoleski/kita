@@ -199,7 +199,7 @@ function i18n_gallery_fancybox_content($gallery, $pic) {
 ?>
       <div style="clear:both"></div>
     </div>
-    <script type="text/javascript" charset="utf-8">
+    <script type="text/javascript">
       $(document).ready(function(){
         var $sel = $("[rel=fancybox-<?php echo $id; ?>]")
         <?php i18n_gallery_replace_nojs_links($gallery, '$sel'); ?>

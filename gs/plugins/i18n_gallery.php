@@ -2,7 +2,7 @@
 /*
 Plugin Name: I18N Gallery
 Description: Display image galleries (I18N enabled)
-Version: 2.0
+Version: 2.1.1
 Author: Martin Vlcek
 Author URI: http://mvlcek.bplaced.net
 */
@@ -19,7 +19,7 @@ define('I18N_GALLERY_DEFAULT_THUMB_HEIGHT', 120);
 register_plugin(
 	$thisfile, 
 	'I18N Gallery', 	
-	'2.0', 		
+	'2.1.1', 		
 	'Martin Vlcek',
 	'http://mvlcek.bplaced.net', 
 	'Display image galleries (I18N enabled)',
@@ -44,6 +44,7 @@ add_action('i18n_gallery-sidebar', 'createSideMenu', array($thisfile, i18n_r('i1
 add_action('i18n_gallery-sidebar', 'createSideMenu', array($thisfile, i18n_r('i18n_gallery/EDIT_GALLERY'), 'edit', false));
 add_action('i18n_gallery-sidebar', 'createSideMenu', array($thisfile, i18n_r('i18n_gallery/SETTINGS'), 'configure'));
 
+add_action('index-pretemplate','i18n_gallery_preview');
 add_action('theme-header','i18n_gallery_theme_header');
 add_filter('content','i18n_gallery_content');
 add_filter('search-index-page', 'i18n_gallery_index');
@@ -98,6 +99,14 @@ function i18n_gallery_main() {
 
 
 # ===== FRONTEND HOOKS =====
+
+function i18n_gallery_preview() {
+  global $content;
+  if (isset($_GET['preview-gallery'])) {
+    if (function_exists('i18n_init')) i18n_init();
+    $content = htmlspecialchars("<p>(% gallery %)</p>");
+  }
+}
 
 function i18n_gallery_theme_header() {
   global $content;
