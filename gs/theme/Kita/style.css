@@ -161,6 +161,10 @@ table.jahresplan td {
  padding: 0.1rem 2rem;
 	
 }
+.nowrap
+{
+white-space:nowrap;
+}
 
 /* FOOTER */
 footer {
