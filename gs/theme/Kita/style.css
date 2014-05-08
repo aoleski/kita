@@ -179,9 +179,8 @@ white-space:nowrap;
 footer {
     float:left;
     width:90%;
-    max-width:950px;
-	  padding-top:5%; padding-right: 10%;padding-left: 10%;padding-bottom: 5%;
-	  text-shadow: 1px 1px 0 rgba(255,255,255,.8);
+    padding:5%;
+    text-shadow: 1px 1px 0 rgba(255,255,255,.8);
    	text-align: center;
 }
 
