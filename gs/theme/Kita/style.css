@@ -2,7 +2,7 @@
 body {
 	background: #F7CE3E;
     font-family: 'museo', arial, helvetica, serif;
-    color: #444;
+    color:black;
 }
 .wrapper {
 	width:90%;
@@ -32,7 +32,6 @@ header nav {
     padding:0;
     font-size:0.8rem;
     overflow:hidden;
-    color:#666;
 	text-shadow: 1px 1px 0 rgba(0,0,0, .3);
 }
 header nav ul {
@@ -75,28 +74,39 @@ article {
 }
 article h1 {
 	margin:0 0 45px 0;
-	font-size:1.3rem;
+	font-size:1.2rem;
     color:darkred;
 }
 article h2 {
 	margin:0 0 10px 0;
-	font-size:1.2rem;
+	font-size:1.1rem;
+    color:darkred;
 }
 article h3 {
 	margin:0 0 15px 0;
-	font-size:1.1rem;
+	font-size:1.0rem;
+    color:darkred;
 }
 
+article img
+{
+    padding: 2%;
+}
 article section {
 	padding:5%;
 	line-height:1.5rem;
-	color:#333;	
 }
 article section p {margin:0 0 25px 0;}
 article section ul, 
 article section ol {
 	margin:0 0 25px 30px;
+    list-style: decimal;
 }
+article section ul {
+	margin:0 0 25px 30px;
+    list-style: disc;
+}
+
 article section ul ul, 
 article section ol ol,
 article section ul ol, 
@@ -112,7 +122,6 @@ article section pre {
 	border:1px solid #ccc;
 	padding:5%;
 	margin:0 0 25px 0;
-	color:#555;
 	text-shadow: 1px 1px 0px #fff;
 	border-radius:0 4px 4px 0;
 	-moz-border-radius:0 4px 4px 0;
@@ -125,7 +134,6 @@ article section pre code {
 }
 article section blockquote {
 	margin:0 0 25px 20px;
-	color:#555;
 	font-family:georgia, garamond, serif;
 	font-style:italic;
 	padding:0 0 0 15px;
@@ -154,7 +162,6 @@ article section .footer p {
 table {
 text-align:left;
 vertical-align:top;
-font-size: 0.9rem;
 column-width: auto
 	
 }
@@ -173,27 +180,9 @@ footer {
     float:left;
     width:90%;
     max-width:950px;
-	padding-top:10%; padding-right: 10%;padding-left: 10%;padding-bottom: 0;
-	text-shadow: 1px 1px 0 rgba(255,255,255,.8);
-	font-size:0.8rem;
-    background: transparent url(images/downline.jpg) 80% bottom no-repeat;
-  	background-size: 100% auto;
+	  padding-top:5%; padding-right: 10%;padding-left: 10%;padding-bottom: 5%;
+	  text-shadow: 1px 1px 0 rgba(255,255,255,.8);
+   	text-align: center;
 }
-footer .left {
-	float:left;
-	width:40%;
-	text-align:left;
-}
-footer .right {
-	float:right;
-	width:60%;
-	text-align:right;
-}
-footer a:link, footer a:visited {
-	color:#888;
-	text-decoration:underline;
-}
-footer a:hover, footer a:focus {
-	color:#555;
-	text-decoration:underline;
-}
+
+
