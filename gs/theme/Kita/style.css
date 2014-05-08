@@ -2,7 +2,7 @@
 body {
 	background: #F7CE3E;
     font-family: 'museo', arial, helvetica, serif;
-    font: 100%; color: #444;
+    color: #444;
 }
 .wrapper {
 	width:90%;
@@ -20,13 +20,15 @@ a:hover, a:focus {
 	text-decoration:underline;
 }	
 
+.wrapper
+{
+	background:white;
+}
+
 
 /* HEADER: navigation */
 header nav {
-    background:url(images/navigation.png) no-repeat;
-    padding:0;
-    max-width:1000px;
-    margin:0 auto;
+    background: darkred;
     padding:0;
     font-size:0.8rem;
     overflow:hidden;
@@ -86,7 +88,7 @@ article h3 {
 }
 
 article section {
-	padding-top:5%;
+	padding:5%;
 	line-height:1.5rem;
 	color:#333;	
 }

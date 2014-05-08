@@ -47,7 +47,7 @@
 
 			</div>
 		</div>
-		<div>
+		<div class="wrapper">
 		  		<!-- main navigation -->
           				<nav id="main-nav">
           					<ul>
