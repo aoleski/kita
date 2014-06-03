@@ -35,17 +35,31 @@
 	
 </head> 
 <body id="<?php get_page_slug(); ?>" >
+	<script>
+  (function() {
+    var cx = '000785874411964165178:h0f0y-itfhk';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
 	
 	<!-- site header -->
 	<header>
 		<div class="header">
 			<div class="wrapper">
 				
+					
 				<!-- logo/sitename -->
 				<a href="<?php get_site_url(); ?>" id="logo" ><img src="<?php get_theme_url(); ?>/images/logo.png" alt ="<?php get_site_name(); ?>" title = "<?php get_site_name(); ?>"/> </a>
 				
-
-			</div>
+				<gcse:search></gcse:search>
+				<div style="clear:both"/>
+		</div>
 		</div>
 		<div class="wrapper">
 		  		<!-- main navigation -->
